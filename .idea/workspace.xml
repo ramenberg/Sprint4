@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="" />
+    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IPtest/ListNetworkInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InetDemo/DatagramReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InetDemo/DatagramSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InetDemo/InetDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InetDemo/QuoteReciever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InetDemo/QuoteSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MultiCast/MulticastReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MultiCast/MulticastSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Weather/WeatherReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Weather/WeatherSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sprint 4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sprint 4.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HEQNNeBphDlSoqNdU5vaqsYIf3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -20,9 +47,98 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.general"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\geleh\IdeaProjects\Sprint4" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="MultiCast" />
+      <recent name="InetDemo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.WeatherSender">
+    <configuration name="DagagramReciever" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="InetDemo.DatagramReceiver" />
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatagramSender" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="InetDemo.DatagramSender" />
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InetDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InetDemo.InetDemo" />
+      <module name="Sprint 4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="InetDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MulticastReceiver" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="MultiCast.MulticastReceiver" />
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MulticastSender" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="MultiCast.MulticastSender" />
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherReceiver" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="Weather.WeatherReceiver" />
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherSender" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="Weather.WeatherSender" />
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DatagramSender" />
+      <item itemvalue="Application.DagagramReciever" />
+      <item itemvalue="Application.MulticastReceiver" />
+      <item itemvalue="Application.MulticastSender" />
+      <item itemvalue="Application.WeatherSender" />
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.WeatherReceiver" />
+      <item itemvalue="Application.InetDemo" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.InetDemo" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -31,7 +147,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667847724534</updated>
+      <workItem from="1667906910799" duration="8261000" />
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
