@@ -15,12 +15,11 @@ public class ReadWordsFromURL {
         String read;
         long count = 0;
 
-        while ((r.readLine()) != null) {
-            read = r.readLine();
-            String[] words = read.split("\\s+\\t+");
+        while ((read = r.readLine()) != null) {
+            String[] words = read.trim().split("\\s+");
             count += words.length;
         }
-        System.out.println("Antal ord i URL:en är " + count);
+        System.out.println("Antal ord är: " + count);
         r.close();
     }
 
