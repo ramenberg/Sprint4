@@ -26,13 +26,8 @@ public class Friend implements Serializable {
 
     @Override
     public String toString() {
-        return "Friend{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", birthday='" + birthday + '\'' +
-                '}';
+        return firstName + " " + lastName + ", " + address + ", "+
+                phone +", " + birthday;
     }
 
     public String getFirstName() {

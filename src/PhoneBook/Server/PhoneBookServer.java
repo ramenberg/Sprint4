@@ -27,12 +27,13 @@ public class PhoneBookServer {
             String userInputFromClient;
 
             while ((userInputFromClient = in.readLine()) != null) {
+                //out.println(welcomeMessage);
                 Friend outputStringToClient;
                 System.out.println("Client sent: " + userInputFromClient);
                 outputStringToClient = getFriend(userInputFromClient);
                 if (outputStringToClient != null) {
                     System.out.println("Sent to client: " + outputStringToClient);
-                    out.println(outputStringToClient);
+                    out.println(outputStringToClient +" "+welcomeMessage);
                 } else {
                     System.out.println("Sent to client: Not found, " + userInputFromClient);
                     out.println("Personen du sökte hittades ej. Namn: " + userInputFromClient);
@@ -44,11 +45,11 @@ public class PhoneBookServer {
     }
 
     protected Friend getFriend(String name) {
-        for (Friend q : friendListFromDb) {
-            if ((name.equalsIgnoreCase(q.getFirstName()) ||
-                    name.equalsIgnoreCase(q.getLastName()))) {
+        for (Friend f : friendListFromDb) {
+            if ((name.equalsIgnoreCase(f.getFirstName()) ||
+                    name.equalsIgnoreCase(f.getLastName()))) {
                 System.out.println("Friend Found");
-                return q;
+                return f;
             }
 
         }

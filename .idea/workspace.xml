@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="Phone book">
-      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Resources/Friend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Client/PhoneBookObjectClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookObjectServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PhoneBook/Client/PhoneBookClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Client/PhoneBookClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Resources/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Resources/Friend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/Friend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookServer.java" afterDir="false" />
     </list>
@@ -45,10 +46,37 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="PhoneBook.Server" />
       <recent name="PhoneBook.Client" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="PhoneBookClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PhoneBook.Client.PhoneBookClient" />
+      <module name="Sprint 4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PhoneBook.Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhoneBookServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PhoneBook.Server.PhoneBookServer" />
+      <module name="Sprint 4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PhoneBook.Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReadWordsFromURL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="URLDemo.ReadWordsFromURL" />
       <module name="Sprint 4" />
@@ -66,10 +94,14 @@
       <item itemvalue="Application.ChatMottagare" />
       <item itemvalue="Application.MottagareMultiThreaded" />
       <item itemvalue="Application.Client" />
+      <item itemvalue="Application.PhoneBookClient" />
+      <item itemvalue="Application.PhoneBookServer" />
       <item itemvalue="Application.ReadWordsFromURL" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PhoneBookClient" />
+        <item itemvalue="Application.PhoneBookServer" />
         <item itemvalue="Application.ReadWordsFromURL" />
       </list>
     </recent_temporary>
@@ -82,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667847724534</updated>
-      <workItem from="1668499339997" duration="13964000" />
+      <workItem from="1668499339997" duration="17924000" />
     </task>
     <task id="LOCAL−00001" summary="New demos">
       <created>1668157130140</created>
@@ -102,7 +134,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1668507836562</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Phone book">
+      <created>1668518422892</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1668518422892</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

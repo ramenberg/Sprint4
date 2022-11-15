@@ -19,15 +19,16 @@ public class PhoneBookClient {
 
         try (Socket s = new Socket(ip, port);
              PrintWriter out = new PrintWriter(s.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()))) {
+             BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()))
+             ) {
 
             BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
 
             while ((fromServer = in.readLine()) != null) {
-                System.out.print("Server sent: " + fromServer);
-//                out.println("Test from server");
+                System.out.print("Server sent: " + fromServer + " ");
                 fromUser = userInput.readLine();
                 if (fromUser != null) {
+                    System.out.println("Client sent: " + fromUser);
                     out.println(fromUser);
                 } else {
                     System.exit(0);
