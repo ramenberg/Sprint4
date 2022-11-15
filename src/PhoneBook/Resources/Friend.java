@@ -1,4 +1,4 @@
-package PhoneBook.Server;
+package PhoneBook.Resources;
 
 import java.io.Serializable;
 

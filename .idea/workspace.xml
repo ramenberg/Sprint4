@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="Server/Client demos">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Client.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Client/PhoneBookClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Server/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Server/Friend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookServer.java" afterDir="false" />
+    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="Phone book">
+      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Resources/Friend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerToClient/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerToClient/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Client/PhoneBookClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Client/PhoneBookClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/Friend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +43,12 @@
     "WebServerToolWindowFactoryState": "false"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="PhoneBook.Client" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="ReadWordsFromURL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="URLDemo.ReadWordsFromURL" />
       <module name="Sprint 4" />
@@ -78,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667847724534</updated>
-      <workItem from="1668499339997" duration="6960000" />
+      <workItem from="1668499339997" duration="13964000" />
     </task>
     <task id="LOCAL−00001" summary="New demos">
       <created>1668157130140</created>
@@ -92,7 +96,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1668505909257</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Phone book">
+      <created>1668507836562</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1668507836562</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New demos" />
     <MESSAGE value="Server/Client demos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server/Client demos" />
+    <MESSAGE value="Phone book" />
+    <option name="LAST_COMMIT_MESSAGE" value="Phone book" />
   </component>
 </project>
