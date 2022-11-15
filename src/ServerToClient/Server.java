@@ -10,6 +10,8 @@ import java.util.List;
 public class Server {
 
     int port = 54789;
+
+    String welcome = "Uppkopplingen till servern lyckades!";
     final static String q1 = "Happiness is an uphill battle. Wear the good shoes. - Kurt Vonnegut";
     final static String q2 = "Without ice cream, there would be chaos and darkness. - Don Kardong";
     final static String q3 = "When things go wrong, don't go with them. - Elvis Presley";
@@ -24,6 +26,8 @@ public class Server {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             Socket s = serverSocket.accept();
             PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+
+            out.println(welcome);
 
             while (true) {
                 String quote;
