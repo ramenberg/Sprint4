@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="Init">
-      <change afterPath="$PROJECT_DIR$/src/Generic/NumberQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic/Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic/QueueInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/URLDemo/ReadWordsFromURL.java" afterDir="false" />
+    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="New demos">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/ChatMottagare.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/MottagareMultiThreaded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerToClient/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerToClient/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SigrunTDCLiveDemo/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SigrunTDCLiveDemo/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SigrunsChatDemo/ChatMultiThreaded.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SigrunsChatDemo/MottagareMultiThreaded.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,19 +29,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2HEQNNeBphDlSoqNdU5vaqsYIf3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ReadWordsFromURL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="URLDemo.ReadWordsFromURL" />
@@ -52,6 +60,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ChatMottagare" />
+      <item itemvalue="Application.MottagareMultiThreaded" />
+      <item itemvalue="Application.ReadWordsFromURL" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ReadWordsFromURL" />
@@ -66,7 +79,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667847724534</updated>
+      <workItem from="1668499339997" duration="5050000" />
     </task>
+    <task id="LOCAL−00001" summary="New demos">
+      <created>1668157130140</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1668157130140</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New demos" />
+    <option name="LAST_COMMIT_MESSAGE" value="New demos" />
   </component>
 </project>
