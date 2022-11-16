@@ -11,7 +11,7 @@ public class Friend implements Serializable {
     String birthday;
 
     public Friend(String firstName, String lastName,
-                  String address, String phone, String birthday) {
+                        String address, String phone, String birthday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -22,6 +22,10 @@ public class Friend implements Serializable {
     public Friend(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Friend() {
+
     }
 
     @Override

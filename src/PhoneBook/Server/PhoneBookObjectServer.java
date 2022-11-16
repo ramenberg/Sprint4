@@ -1,41 +1,46 @@
 package PhoneBook.Server;
 
+import PhoneBook.Resources.Friend;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
 
-public class PhoneBookObjectServer {
+public class PhoneBookObjectServer extends Friend {
 
     int port = 54789;
     String welcomeMessage = "Ange namn på personen du söker: ";
 
     // init friends list from db.
     Database db = new Database();
-    List<Friend> friendListFromDb = Database.getFriendList();
+    List<PhoneBook.Server.Friend> friendListFromDb = Database.getFriendList();
     public PhoneBookObjectServer() {
+        super();
 
         try (ServerSocket serverSocket = new ServerSocket(port);
              Socket socketToClient = serverSocket.accept();
              ObjectOutputStream out = new ObjectOutputStream(socketToClient.getOutputStream());
              ObjectInputStream in = new ObjectInputStream(socketToClient.getInputStream())) {
 
-            out.writeObject(welcomeMessage); // intro message
-            Object userInputFromClient;
+            String userInputFromClient;
+//            Friend friendToClient;
 
-            while ((userInputFromClient = in.readObject()) != null) {
-                Friend outputObjectToClient;
-                if (userInputFromClient instanceof String) {
-                    System.out.println("Client sent: " + userInputFromClient);
+            // Fuling enligt Sigrun då klienten bara tar emot Friend
+            out.writeObject(new PhoneBook.Server.Friend(null, welcomeMessage)); // intro message
+
+            while ((userInputFromClient = (String)in.readObject()) != null) {
+
+                PhoneBook.Server.Friend outputStringToClient;
+                System.out.println("Client sent: " + userInputFromClient);
+                outputStringToClient = getFriend(userInputFromClient);
+                if (outputStringToClient != null) {
+                    System.out.println("Sent to client: " + outputStringToClient);
+                    out.writeObject(outputStringToClient +" "+welcomeMessage);
                 } else {
-                    outputObjectToClient = getFriend((String) userInputFromClient);
-                    if (outputObjectToClient != null) {
-                        System.out.println("Sent to client: " + outputObjectToClient);
-                        out.writeObject(outputObjectToClient +" "+welcomeMessage);
-                    } else {
-                        System.out.println("Sent to client: Not found, " + userInputFromClient);
-                        out.writeObject("Personen du sökte hittades ej. Namn: " + userInputFromClient);
-                    }
+                    System.out.println("Sent to client: Not found, " + userInputFromClient);
+                    out.writeObject(new PhoneBook.Server.Friend(null, "Personen du sökte hittades ej. Namn: " +
+                            userInputFromClient));
                 }
 
             }
@@ -46,14 +51,13 @@ public class PhoneBookObjectServer {
         }
     }
 
-    protected Friend getFriend(String name) {
-        for (Friend f : friendListFromDb) {
+    protected PhoneBook.Server.Friend getFriend(String name) {
+        for (PhoneBook.Server.Friend f : friendListFromDb) {
             if ((name.equalsIgnoreCase(f.getFirstName()) ||
                     name.equalsIgnoreCase(f.getLastName()))) {
                 System.out.println("Friend Found");
                 return f;
             }
-
         }
         return null;
     }

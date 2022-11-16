@@ -1,4 +1,4 @@
-package InetDemo;
+package Quotes;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -6,7 +6,7 @@ import java.net.DatagramSocket;
 
 public class QuoteReciever {
 
-    int port = 55_555;
+    int port;
     DatagramSocket ds = new DatagramSocket(port);
     byte[] bytes = new byte[254]; // storlek på meddelande. om längre bryts till flera paket
 

@@ -13,15 +13,15 @@ public class WeatherSender {
 
         int port = 45678;
         InetAddress ip = InetAddress.getLocalHost();
-        DatagramSocket socket = new DatagramSocket();
-        String message = "";
-        String temp;
+        try (DatagramSocket socket = new DatagramSocket()) {
+            String message;
+            String temp;
 
-        String city = JOptionPane.showInputDialog(null, "Ange stad: ");
-        if (city == null || city.length() == 0) {
-            System.exit(0);
-        }
-        System.out.println(city);
+            String city = JOptionPane.showInputDialog(null, "Ange stad: ");
+            if (city == null || city.length() == 0) {
+                System.exit(0);
+            }
+            System.out.println(city);
 
 //        System.out.print("Ange stad: ");
 //        if (!scan.hasNextLine()) {
@@ -30,12 +30,13 @@ public class WeatherSender {
 //            city = scan.nextLine();
 //        }
 
-        while (scan.hasNext()) {
-            temp = scan.next();
-            message = city + ", " + temp;
-            byte[] data = message.getBytes();
-            DatagramPacket packet = new DatagramPacket(data, data.length, ip, port);
-            socket.send(packet);
+            while (scan.hasNext()) {
+                temp = scan.next();
+                message = city + ", " + temp;
+                byte[] data = message.getBytes();
+                DatagramPacket packet = new DatagramPacket(data, data.length, ip, port);
+                socket.send(packet);
+            }
         }
     }
 

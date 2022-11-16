@@ -24,6 +24,10 @@ public class Friend implements Serializable {
         this.lastName = lastName;
     }
 
+    public Friend() {
+
+    }
+
     @Override
     public String toString() {
         return firstName + " " + lastName + ", " + address + ", "+

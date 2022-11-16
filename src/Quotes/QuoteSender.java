@@ -1,4 +1,4 @@
-package InetDemo;
+package Quotes;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -24,17 +24,22 @@ public class QuoteSender {
 
         InetAddress toIp = InetAddress.getLocalHost();
         int toPort = 55_555;
-        DatagramSocket ds = new DatagramSocket();
+        try (DatagramSocket ds = new DatagramSocket()) {
 
-        int quouteCounter = 0;
+            int quouteCounter = 0;
 
-        while (true) {
-            byte[] data = quoteList.get(quouteCounter).getBytes();
-            DatagramPacket dgp = new DatagramPacket(data,data.length, toIp, toPort);
-            ds.send(dgp);
-//            System.out.println("Sent " + dgp);
-            quouteCounter = (quouteCounter + 1) % 5;
-            Thread.sleep(3000);
+            try {
+                while (true) {
+                    byte[] data = quoteList.get(quouteCounter).getBytes();
+                    DatagramPacket dgp = new DatagramPacket(data, data.length, toIp, toPort);
+                    ds.send(dgp);
+        //            System.out.println("Sent " + dgp);
+                    quouteCounter = (quouteCounter + 1) % 5;
+                    Thread.sleep(3000);
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
 
     }
