@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="Phone book object">
-      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Objects/Resources/Friend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Objects/Server/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PhoneBook/Objects/Server/PhoneBookObjectServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Client/PhoneBookObjectClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Objects/Client/PhoneBookObjectClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Resources/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Client/Friend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/Friend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookObjectServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Server/PhoneBookServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Objects/Client/PhoneBookObjectClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Objects/Client/PhoneBookObjectClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Objects/Resources/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Objects/Resources/Friend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneBook/Objects/Server/PhoneBookObjectServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneBook/Objects/Server/PhoneBookObjectServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +157,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667847724534</updated>
       <workItem from="1667906910799" duration="8261000" />
-      <workItem from="1668609347905" duration="2914000" />
+      <workItem from="1668609347905" duration="4022000" />
     </task>
     <task id="LOCAL−00001" summary="Phone book object">
       <created>1668597483090</created>
@@ -171,7 +165,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1668597483090</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Phone book object">
+      <created>1668612364720</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1668612364720</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

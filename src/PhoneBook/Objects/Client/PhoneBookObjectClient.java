@@ -18,11 +18,18 @@ public class PhoneBookObjectClient implements Serializable {
              ObjectInputStream ois = new ObjectInputStream(socketFromServer.getInputStream())) {
 
             String fromUser;
+            String stringFromServer;
             Friend fromServer;
 
             BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
 
-            while ((fromServer = (Friend) ois.readObject()) != null) {
+            while ((fromServer = ois.readObject()) != null) {
+                if (fromServer instanceof Friend) {
+
+                } else if (fromServer instanceof String) {
+
+                }
+
                 System.out.print("Server sent: " + fromServer + " ");
 
                 fromUser = userInput.readLine();

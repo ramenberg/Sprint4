@@ -22,6 +22,7 @@ public class PhoneBookObjectServer implements Serializable {
 
             Object userInputFromClient;
             Friend friendToClient;
+            String stringToClient;
 
             // Fuling enligt Sigrun då klienten bara tar emot Friend
             oos.writeObject(new Friend(welcomeMessage)); // intro message
@@ -32,8 +33,7 @@ public class PhoneBookObjectServer implements Serializable {
                 friendToClient = dao.getPersonByName(((String) userInputFromClient).trim());
                 if (friendToClient == null) {
                     System.out.println("Sent to client: Not found, " + userInputFromClient);
-                    oos.writeObject(new Friend("Personen du sökte hittades ej. Namn: " +
-                            (String)userInputFromClient));
+                    oos.writeObject(new Friend("Personen du sökte hittades ej. Namn: "));
                 } else {
                     System.out.println("Sent to client: " + friendToClient);
                     oos.writeObject(friendToClient);

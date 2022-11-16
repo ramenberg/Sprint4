@@ -24,7 +24,7 @@ public class Friend implements Serializable {
         this.lastName = lastName;
     }
 
-    public Friend(String welcomeMessage) {
+    public Friend(String message) {
     }
 
     @Override
