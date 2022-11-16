@@ -1,4 +1,4 @@
-package PhoneBook.Server;
+package PhoneBook.Objects.Resources;
 
 import java.io.Serializable;
 
@@ -24,11 +24,7 @@ public class Friend implements Serializable {
         this.lastName = lastName;
     }
 
-    public Friend() {
-
-    }
-
-    public Friend(String s) {
+    public Friend(String welcomeMessage) {
     }
 
     @Override

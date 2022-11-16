@@ -1,10 +1,12 @@
-package PhoneBook.Client;
+package PhoneBook.Objects.Client;
+
+import PhoneBook.Objects.Resources.Friend;
 
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
-public class PhoneBookObjectClient extends PhoneBook.Resources.Friend implements Serializable {
+public class PhoneBookObjectClient implements Serializable {
     int port = 54789;
     InetAddress ip = InetAddress.getLocalHost();
 
@@ -12,28 +14,26 @@ public class PhoneBookObjectClient extends PhoneBook.Resources.Friend implements
 
 
         try (Socket socketFromServer = new Socket(ip, port);
-             ObjectOutputStream out = new ObjectOutputStream(socketFromServer.getOutputStream());
-             ObjectInputStream in = new ObjectInputStream(socketFromServer.getInputStream())) {
+             ObjectOutputStream oos = new ObjectOutputStream(socketFromServer.getOutputStream());
+             ObjectInputStream ois = new ObjectInputStream(socketFromServer.getInputStream())) {
 
             String fromUser;
-            PhoneBook.Resources.Friend fromServer;
+            Friend fromServer;
 
             BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
 
-            while ((fromServer = (PhoneBook.Resources.Friend) in.readObject()) != null) {
+            while ((fromServer = (Friend) ois.readObject()) != null) {
                 System.out.print("Server sent: " + fromServer + " ");
 
                 fromUser = userInput.readLine();
                 if (fromUser != null) {
                     System.out.println("Client sent: " + fromUser);
-                    out.writeObject(fromUser);
+                    oos.writeObject(fromUser);
                 }
             }
 
-        } catch (IOException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
 
     }

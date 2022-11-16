@@ -6,16 +6,13 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.List;
 
 public class PhoneBookServer {
 
+    DAO dao = new DAO();
     int port = 54789;
     String welcomeMessage = "Ange namn på personen du söker: ";
 
-    // init friends list from db.
-    Database db = new Database();
-    List<Friend> friendListFromDb = Database.getFriendList();
     public PhoneBookServer() {
 
         try (ServerSocket serverSocket = new ServerSocket(port);
@@ -30,7 +27,7 @@ public class PhoneBookServer {
                 //out.println(welcomeMessage);
                 Friend outputStringToClient;
                 System.out.println("Client sent: " + userInputFromClient);
-                outputStringToClient = getFriend(userInputFromClient);
+                outputStringToClient = dao.getPersonByName((userInputFromClient));
                 if (outputStringToClient != null) {
                     System.out.println("Sent to client: " + outputStringToClient);
                     out.println(outputStringToClient +" "+welcomeMessage);
@@ -42,18 +39,6 @@ public class PhoneBookServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    protected Friend getFriend(String name) {
-        for (Friend f : friendListFromDb) {
-            if ((name.equalsIgnoreCase(f.getFirstName()) ||
-                    name.equalsIgnoreCase(f.getLastName()))) {
-                System.out.println("Friend Found");
-                return f;
-            }
-
-        }
-        return null;
     }
     public static void main(String[] args) {
         new PhoneBookServer();
