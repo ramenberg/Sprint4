@@ -1,12 +1,9 @@
-package PhoneBook.WithProtocol.Server;
+package PhoneBook.WithProtocol.Resources;
 
-import PhoneBook.MultiUser.Resources.Friend;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAO implements Serializable {
+public class DAO {
     Friend a = new Friend("Jenny", "Larsson", "Vendelvägen 14",
             "0700123456", "1979-05-12");
     Friend b = new Friend("Filip", "Ljung", "Rosgatan 54",

@@ -1,8 +1,8 @@
-package PhoneBook.WithProtocol.Server;
+package PhoneBook.MultiUserChat.Server;
 
-import PhoneBook.MultiUser.Resources.Friend;
-import PhoneBook.MultiUser.Resources.Initiator;
-import PhoneBook.MultiUser.Resources.Response;
+import PhoneBook.MultiUserChat.Resources.Friend;
+import PhoneBook.MultiUserChat.Resources.Initiator;
+import PhoneBook.MultiUserChat.Resources.Response;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

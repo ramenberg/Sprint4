@@ -1,6 +1,6 @@
-package PhoneBook.WithProtocol.Server;
+package PhoneBook.MultiUserChat.Server;
 
-import PhoneBook.WithProtocol.Resources.*;
+import PhoneBook.MultiUserChat.Resources.*;
 
 public class PhoneBookProtocol {
 

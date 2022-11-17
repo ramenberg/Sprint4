@@ -1,4 +1,4 @@
-package PhoneBook.WithProtocol.Resources;
+package PhoneBook.MultiUserChat.Resources;
 
 import java.io.Serializable;
 
@@ -24,15 +24,15 @@ public class Friend implements Serializable {
         this.lastName = lastName;
     }
 
-    public Friend() {
-
-    }
-
-    public Friend(String s) {
+    public Friend(String message) {
     }
 
     @Override
     public String toString() {
+        return firstName + " " + lastName + ", " + address + ", "+
+                phone +", " + birthday;
+    }
+    public String printFriend() {
         return firstName + " " + lastName + ", " + address + ", "+
                 phone +", " + birthday;
     }

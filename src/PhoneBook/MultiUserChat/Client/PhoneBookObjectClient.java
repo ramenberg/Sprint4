@@ -1,7 +1,7 @@
-package PhoneBook.WithProtocol.Client;
+package PhoneBook.MultiUserChat.Client;
 
-import PhoneBook.MultiUser.Resources.Initiator;
-import PhoneBook.MultiUser.Resources.Response;
+import PhoneBook.MultiUserChat.Resources.Initiator;
+import PhoneBook.MultiUserChat.Resources.Response;
 
 import java.io.*;
 import java.net.InetAddress;

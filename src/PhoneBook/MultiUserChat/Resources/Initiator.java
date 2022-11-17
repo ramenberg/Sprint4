@@ -1,4 +1,4 @@
-package PhoneBook.WithProtocol.Resources;
+package PhoneBook.MultiUserChat.Resources;
 
 import java.io.Serializable;
 
