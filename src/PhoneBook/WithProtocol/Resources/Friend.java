@@ -1,4 +1,4 @@
-package PhoneBook.Objects.Resources;
+package PhoneBook.WithProtocol.Resources;
 
 import java.io.Serializable;
 

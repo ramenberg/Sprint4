@@ -1,6 +1,6 @@
-package PhoneBook.Objects.Server;
+package PhoneBook.WithProtocol.Server;
 
-import PhoneBook.Objects.Resources.Friend;
+import PhoneBook.MultiUser.Resources.Friend;
 
 import java.io.Serializable;
 import java.util.ArrayList;

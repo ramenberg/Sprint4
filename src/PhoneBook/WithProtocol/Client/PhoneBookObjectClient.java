@@ -1,6 +1,7 @@
-package PhoneBook.Objects.Client;
+package PhoneBook.WithProtocol.Client;
 
-import PhoneBook.Objects.Resources.Friend;
+import PhoneBook.MultiUser.Resources.Initiator;
+import PhoneBook.MultiUser.Resources.Response;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -23,10 +24,18 @@ public class PhoneBookObjectClient implements Serializable {
             BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
 
             while ((fromServer = ois.readObject()) != null) {
-                if (fromServer instanceof String) {
-                    System.out.print("Server sent: " + fromServer + " ");
-                } else if (fromServer instanceof Friend) {
-                    System.out.print("Server sent: " + (((Friend) fromServer).printFriend()) + " ");
+                if (fromServer instanceof Initiator) {
+                    System.out.println("Connection to server established successfully.");
+                    System.out.print("Skriv namnet på personen du söker: ");
+                } else if (fromServer instanceof Response) {
+                    // if false - skriv "hittades ej"
+                    if (!((Response) fromServer).isFound()) {
+                        System.out.println("Personen du sökte hittades ej.");
+                    } else {
+                        System.out.println("Server sent: " + (((Response) fromServer).getFriend()));
+                        // if true - skriv ut person
+                    }
+                    System.out.print("Skriv namnet på personen du söker: ");
                 }
 
                 fromUser = userInput.readLine();

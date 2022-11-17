@@ -1,7 +1,13 @@
-package PhoneBook.Objects.Server;
-import PhoneBook.Objects.Resources.Friend;
+package PhoneBook.WithProtocol.Server;
 
-import java.io.*;
+import PhoneBook.MultiUser.Resources.Friend;
+import PhoneBook.MultiUser.Resources.Initiator;
+import PhoneBook.MultiUser.Resources.Response;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -22,10 +28,8 @@ public class PhoneBookObjectServer implements Serializable {
 
             Object userInputFromClient;
             Friend friendToClient;
-            String stringToClient;
 
-            // Fuling enligt Sigrun då klienten bara tar emot Friend
-            oos.writeObject(welcomeMessage); // intro message
+            oos.writeObject(new Initiator());
 
             while ((userInputFromClient = ois.readObject()) != null) {
                 if (userInputFromClient instanceof String) {
@@ -34,10 +38,10 @@ public class PhoneBookObjectServer implements Serializable {
 
                     if (friendToClient == null) {
                         System.out.println("Sent to client: Not found, " + userInputFromClient);
-                        oos.writeObject("Personen du sökte hittades ej. Namn: " + userInputFromClient);
+                        oos.writeObject(new Response(false));
                     } else {
                         System.out.println("Sent to client: " + friendToClient);
-                        oos.writeObject(friendToClient);
+                        oos.writeObject(new Response(true, friendToClient));
                     }
                 }
             }

@@ -1,6 +1,6 @@
-package PhoneBook.Objects.Server;
+package PhoneBook.MultiUser.Server;
 
-import PhoneBook.Objects.Resources.Friend;
+import PhoneBook.MultiUser.Resources.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class DAO implements Serializable {
         return allPersons;
     }
 
-    public Friend getPersonByName(String s) {
+    public PhoneBook.MultiUser.Resources.Friend getPersonByName(String s) {
         for (Friend f : allPersons) {
             if ((s.equalsIgnoreCase(f.getFirstName()) ||
                     s.equalsIgnoreCase(f.getLastName()))) {
