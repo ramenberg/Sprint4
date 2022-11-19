@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="Phone book">
-      <change afterPath="$PROJECT_DIR$/src/NeuraNine_TCPChat/Server.java" afterDir="false" />
+    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="TCP Chat room">
+      <change afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuraNine_TCPChat/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
       <recent name="PhoneBook.MultiUser.Server.Resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ChatMottagare">
+  <component name="RunManager">
     <configuration name="PhoneBookClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PhoneBook.Client.PhoneBookClient" />
       <module name="Sprint 4" />
@@ -124,7 +125,7 @@
       <updated>1667847724534</updated>
       <workItem from="1668499339997" duration="17924000" />
       <workItem from="1668684940283" duration="4347000" />
-      <workItem from="1668851065866" duration="3735000" />
+      <workItem from="1668851065866" duration="5986000" />
     </task>
     <task id="LOCAL−00001" summary="New demos">
       <created>1668157130140</created>
@@ -162,7 +163,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1668695713505</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="TCP Chat room">
+      <created>1668854994014</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1668854994014</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +187,7 @@
     <MESSAGE value="New demos" />
     <MESSAGE value="Server/Client demos" />
     <MESSAGE value="Phone book" />
-    <option name="LAST_COMMIT_MESSAGE" value="Phone book" />
+    <MESSAGE value="TCP Chat room" />
+    <option name="LAST_COMMIT_MESSAGE" value="TCP Chat room" />
   </component>
 </project>

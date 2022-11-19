@@ -1,4 +1,4 @@
-package NeuraNine_TCPChat;
+package NeuralNine_TCPChat;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,13 +7,14 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server implements Runnable{
-
-    public int port = 19871;
     private ArrayList<ConnectionHandler> connections;
     private ServerSocket server;
     private boolean done;
+    private ExecutorService pool;
 
     public Server() {
         connections = new ArrayList<>();
@@ -22,11 +23,15 @@ public class Server implements Runnable{
 
     @Override
     public void run() {
-        try (ServerSocket server = new ServerSocket(port)){
+        int port = 19871;
+        try {
+            ServerSocket server = new ServerSocket(port);
+            pool = Executors.newCachedThreadPool();
             while (!done) {
                 Socket client = server.accept();
                 ConnectionHandler handler = new ConnectionHandler(client);
                 connections.add(handler);
+                pool.execute(handler);
             }
         } catch (IOException e) {
             shutDown();
@@ -44,10 +49,17 @@ public class Server implements Runnable{
             e.printStackTrace();
         }
     }
+    public void broadcast(String message) {
+        for (ConnectionHandler ch : connections) {
+            if (ch != null) {
+                ch.sendMessage(message);
+            }
+        }
+    }
 
     class ConnectionHandler implements Runnable { // client connection
 
-        private Socket client;
+        private final Socket client;
         private BufferedReader in;
         private PrintWriter out;
         private String nickname;
@@ -62,7 +74,7 @@ public class Server implements Runnable{
                 out = new PrintWriter(client.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
                 out.print("Please enter a nickname: ");
-                nickname = in.readLine().trim(); // TODO if-statment for valid nickname
+                nickname = in.readLine().trim(); // TODO if-statment for valid nickname?
                 System.out.println(nickname + " connected. ");
                 broadcast(nickname + " has joined the chat. ");
 
@@ -82,20 +94,15 @@ public class Server implements Runnable{
                         broadcast(nickname + " has left the chat. ");
                         shutDownClient();
                     } else {
-                        broadcast(nickname + ":" + message);
+                        broadcast(nickname + ": " + message);
                     }
                 }
             } catch (IOException e) {
                 shutDown();
             }
         }
-
-        public void broadcast(String message) {
-            for (ConnectionHandler ch : connections) {
-                if (ch != null) {
-                    ch.sendMessage(message);
-                }
-            }
+        public void sendMessage(String message) {
+            out.println(message);
         }
 
         public void shutDownClient() {
@@ -109,8 +116,10 @@ public class Server implements Runnable{
                 e.printStackTrace();
             }
         }
-        public void sendMessage(String message) {
-            out.println(message);
-        }
+    }
+
+    public static void main(String[] args) {
+        Server server = new Server();
     }
 }
+
