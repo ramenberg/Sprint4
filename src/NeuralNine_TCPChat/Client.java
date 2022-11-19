@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
 public class Client implements Runnable{
 
     protected Socket clientSocket;
-    protected BufferedReader in;
+    protected BufferedReader in, inReader;
     protected PrintWriter out;
     protected boolean done;
 
@@ -22,24 +22,51 @@ public class Client implements Runnable{
     @Override
     public void run() {
         int port = 19874;
-        try (Socket clientSocket = new Socket(InetAddress.getLocalHost(), port);
-        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-        BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))){
+        try {
+            clientSocket = new Socket(InetAddress.getLocalHost(), port);
+            out = new PrintWriter(clientSocket.getOutputStream(), true);
+            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
             InputHandler inHandler = new InputHandler();
             Thread t = new Thread(inHandler);
             t.start();
+            System.out.println("Successfully connected to server. ");
 
             String inMessage;
             while ((inMessage = in.readLine()) != null) {
                 System.out.println(inMessage);
             }
         } catch (IOException e) {
-            shutDown();
+            e.printStackTrace();
+            shutDownClient();
         }
     }
 
-    public void shutDown() {
+
+    public class InputHandler implements Runnable {
+
+        @Override
+        public void run() {
+            try {
+                inReader = new BufferedReader(new InputStreamReader(System.in));
+                while (!done) {
+                   String message = inReader.readLine();
+                   if (message.equalsIgnoreCase("/quit")) {
+                       out.println(message);
+                       inReader.close();
+                       shutDownClient();
+                   } else {
+                       out.println(message);
+                   }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                shutDownClient(); // TODO tas den bort får man inte texten två ggr men prog avslutas ej.
+            }
+        }
+    }
+    public void shutDownClient() {
+        System.out.println("Från Client.java");
         done = true;
         try {
             in.close();
@@ -47,30 +74,8 @@ public class Client implements Runnable{
             if (!clientSocket.isClosed()) {
                 clientSocket.close();
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    class InputHandler implements Runnable {
-
-        @Override
-        public void run() {
-            try {
-                BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in));
-                while (!done) {
-                   String message = inReader.readLine();
-                   if (message.equalsIgnoreCase("/quit")) {
-                       inReader.close();
-                       shutDown();
-                   } else {
-                       out.println(message);
-                   }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                shutDown();
-            }
+        } catch(IOException e) {
+            e.printStackTrace();
         }
     }
 
