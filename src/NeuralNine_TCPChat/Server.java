@@ -11,10 +11,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Server implements Runnable{
-    private ArrayList<ConnectionHandler> connections;
-    private ServerSocket server;
-    private boolean done;
-    private ExecutorService pool;
+    protected static ArrayList<ConnectionHandler> connections;
+    protected ServerSocket server;
+    protected boolean done;
+    protected ExecutorService pool;
 
     public Server() {
         connections = new ArrayList<>();
@@ -23,9 +23,9 @@ public class Server implements Runnable{
 
     @Override
     public void run() {
-        int port = 19871;
+        int port = 19874;
         try {
-            ServerSocket server = new ServerSocket(port);
+            server = new ServerSocket(port);
             pool = Executors.newCachedThreadPool();
             while (!done) {
                 Socket client = server.accept();
@@ -35,6 +35,7 @@ public class Server implements Runnable{
             }
         } catch (IOException e) {
             shutDown();
+            e.printStackTrace();
         }
     }
     public void shutDown() {
@@ -46,23 +47,15 @@ public class Server implements Runnable{
             for (ConnectionHandler ch : connections)
                 ch.shutDownClient();
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void broadcast(String message) {
-        for (ConnectionHandler ch : connections) {
-            if (ch != null) {
-                ch.sendMessage(message);
-            }
+            e.printStackTrace(); // ignore?
         }
     }
 
-    class ConnectionHandler implements Runnable { // client connection
+    public class ConnectionHandler implements Runnable { // client connection
 
         private final Socket client;
         private BufferedReader in;
         private PrintWriter out;
-        private String nickname;
 
         public ConnectionHandler(Socket client) {
             this.client = client;
@@ -74,7 +67,7 @@ public class Server implements Runnable{
                 out = new PrintWriter(client.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
                 out.print("Please enter a nickname: ");
-                nickname = in.readLine().trim(); // TODO if-statment for valid nickname?
+                String nickname = in.readLine().trim(); // TODO if-statement for valid nickname?
                 System.out.println(nickname + " connected. ");
                 broadcast(nickname + " has joined the chat. ");
 
@@ -90,19 +83,26 @@ public class Server implements Runnable{
                         } else {
                             out.println("No nickname provided. ");
                         }
-                    } else if (message.startsWith("/exit")) {
-                        broadcast(nickname + " has left the chat. ");
+                    } else if (message.startsWith("/quit")) {
+                        broadcast(nickname + " left the chat. ");
                         shutDownClient();
                     } else {
                         broadcast(nickname + ": " + message);
                     }
                 }
             } catch (IOException e) {
-                shutDown();
+                shutDownClient();
             }
         }
         public void sendMessage(String message) {
             out.println(message);
+        }
+        public void broadcast(String message) {
+            for (ConnectionHandler ch : Server.connections) {
+                if (ch != null) {
+                    ch.sendMessage(message);
+                }
+            }
         }
 
         public void shutDownClient() {
@@ -119,7 +119,8 @@ public class Server implements Runnable{
     }
 
     public static void main(String[] args) {
-        Server server = new Server();
+        Server server1 = new Server();
+        server1.run();
     }
 }
 

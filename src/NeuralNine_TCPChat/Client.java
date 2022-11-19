@@ -10,21 +10,21 @@ import java.net.UnknownHostException;
 
 public class Client implements Runnable{
 
-    private Socket client;
-    private BufferedReader in;
-    private PrintWriter out;
-    private boolean done;
-    InetAddress ip = InetAddress.getLocalHost();
+    protected Socket clientSocket;
+    protected BufferedReader in;
+    protected PrintWriter out;
+    protected boolean done;
 
     public Client() throws UnknownHostException {
+        done = false;
     }
 
     @Override
     public void run() {
         int port = 19874;
-        try (Socket client = new Socket(ip, port)) {
-            out = new PrintWriter(client.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        try (Socket clientSocket = new Socket(InetAddress.getLocalHost(), port);
+        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+        BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))){
 
             InputHandler inHandler = new InputHandler();
             Thread t = new Thread(inHandler);
@@ -35,7 +35,7 @@ public class Client implements Runnable{
                 System.out.println(inMessage);
             }
         } catch (IOException e) {
-            // TODO
+            shutDown();
         }
     }
 
@@ -44,8 +44,8 @@ public class Client implements Runnable{
         try {
             in.close();
             out.close();
-            if (!client.isClosed()) {
-                client.close();
+            if (!clientSocket.isClosed()) {
+                clientSocket.close();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -60,7 +60,7 @@ public class Client implements Runnable{
                 BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in));
                 while (!done) {
                    String message = inReader.readLine();
-                   if (message.equals("/quit")) {
+                   if (message.equalsIgnoreCase("/quit")) {
                        inReader.close();
                        shutDown();
                    } else {
@@ -68,6 +68,7 @@ public class Client implements Runnable{
                    }
                 }
             } catch (Exception e) {
+                e.printStackTrace();
                 shutDown();
             }
         }
@@ -75,5 +76,6 @@ public class Client implements Runnable{
 
     public static void main(String[] args) throws UnknownHostException {
         Client client = new Client();
+        client.run();
     }
 }

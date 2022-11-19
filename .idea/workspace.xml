@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="TCP Chat room">
-      <change afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/ConnectionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/InputHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NeuraNine_TCPChat/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,34 @@
       <recent name="PhoneBook.MultiUser.Server.Resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.NN Client">
+    <configuration name="ListNetworkInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IPtest.ListNetworkInterface" />
+      <module name="Sprint 4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="IPtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NN Client" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="NeuralNine_TCPChat.Client" />
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NN Server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="NeuralNine_TCPChat.Server" />
+      <module name="Sprint 4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PhoneBookClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PhoneBook.Client.PhoneBookClient" />
       <module name="Sprint 4" />
@@ -97,18 +126,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NeuralNine_TCPChat.Server" />
+      <module name="Sprint 4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="NeuralNine_TCPChat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.ChatMottagare" />
       <item itemvalue="Application.MottagareMultiThreaded" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.PhoneBookObjectClient" />
       <item itemvalue="Application.PhoneBookObjectServer" />
+      <item itemvalue="Application.NN Client" />
+      <item itemvalue="Application.NN Server" />
+      <item itemvalue="Application.ListNetworkInterface" />
+      <item itemvalue="Application.Server" />
       <item itemvalue="Application.PhoneBookClient" />
       <item itemvalue="Application.PhoneBookServer" />
       <item itemvalue="Application.ReadWordsFromURL" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ListNetworkInterface" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.PhoneBookClient" />
         <item itemvalue="Application.PhoneBookServer" />
         <item itemvalue="Application.ReadWordsFromURL" />
@@ -125,7 +173,7 @@
       <updated>1667847724534</updated>
       <workItem from="1668499339997" duration="17924000" />
       <workItem from="1668684940283" duration="4347000" />
-      <workItem from="1668851065866" duration="5986000" />
+      <workItem from="1668851065866" duration="10325000" />
     </task>
     <task id="LOCAL−00001" summary="New demos">
       <created>1668157130140</created>
@@ -169,7 +217,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1668854994014</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="TCP Chat room">
+      <created>1668857105326</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1668857105326</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,5 +243,29 @@
     <MESSAGE value="Phone book" />
     <MESSAGE value="TCP Chat room" />
     <option name="LAST_COMMIT_MESSAGE" value="TCP Chat room" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sprint_4$NN_Client.ic" NAME="NN Client Coverage Results" MODIFIED="1668861353637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
