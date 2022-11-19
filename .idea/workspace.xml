@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="Phone book object">
+    <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="Multiuser chat, not complete">
+      <change afterPath="$PROJECT_DIR$/src/WittCodeChat/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WittCodeChat/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NeuralNine_TCPChat/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/ConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNine_TCPChat/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +166,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.PhoneBookObjectServer" />
       <item itemvalue="Application.PhoneBookObjectClient" />
       <item itemvalue="Application.ChatMottagare" />
       <item itemvalue="Application.Client" />
@@ -204,6 +204,7 @@
       <updated>1667847724534</updated>
       <workItem from="1667906910799" duration="8261000" />
       <workItem from="1668609347905" duration="4022000" />
+      <workItem from="1668896804722" duration="1876000" />
     </task>
     <task id="LOCAL−00001" summary="Phone book object">
       <created>1668597483090</created>
@@ -217,7 +218,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1668612364720</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Multiuser chat, not complete">
+      <created>1668877805415</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1668877805415</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,6 +240,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Phone book object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Phone book object" />
+    <MESSAGE value="Multiuser chat, not complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multiuser chat, not complete" />
   </component>
 </project>
