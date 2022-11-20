@@ -6,7 +6,7 @@ import java.net.Socket;
 
 public class Server {
 
-    private ServerSocket serverSocket;
+    private final ServerSocket serverSocket;
 
     public Server(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
@@ -16,14 +16,15 @@ public class Server {
         try {
             while (!serverSocket.isClosed()) {
                 Socket socket = serverSocket.accept();
-                System.out.println("A new client has connected. ");
                 ClientHandler clientHandler = new ClientHandler(socket); // communicating with client
+                System.out.println(clientHandler.getClientUserName() + " har anslutit. ");
 
                 Thread thread = new Thread(clientHandler);
                 thread.start();
             }
         } catch (IOException e) {
-            // TODO handle
+            closeServerSocket();
+            e.printStackTrace();
 
         }
     }
@@ -38,8 +39,8 @@ public class Server {
     }
 
     public static void main(String[] args) throws IOException{
-        ServerSocket serverSocket1 = new ServerSocket(12345);
-        Server server = new Server(serverSocket1);
+        ServerSocket serverSocket = new ServerSocket(12345);
+        Server server = new Server(serverSocket);
         server.startServer();
     }
 }

@@ -12,6 +12,10 @@ public class ClientHandler implements Runnable{
     private BufferedWriter bufferedWriter; // send msg C to C
     private String clientUserName;
 
+    public String getClientUserName() {
+        return clientUserName;
+    }
+
     public ClientHandler(Socket socket) {
         try {
             this.socket = socket;
@@ -19,7 +23,7 @@ public class ClientHandler implements Runnable{
             this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             this.clientUserName = bufferedReader.readLine().trim();
             clientHandlers.add(this);
-            broadcastMessage("Server: " + clientUserName + " has entered the chat. ");
+            broadcastMessage(clientUserName + " har anslutit till chatten. ");
         } catch (IOException e) {
             closeEverything(socket, bufferedReader, bufferedWriter);
         }
@@ -29,6 +33,7 @@ public class ClientHandler implements Runnable{
     public void run() { // everything here runs in a separate thread
         String messageFromClient;
 
+        // original
         while (socket.isConnected()) {
             try {
                 messageFromClient = bufferedReader.readLine();
@@ -42,7 +47,7 @@ public class ClientHandler implements Runnable{
     public void broadcastMessage(String messageToSend) {
         for (ClientHandler clientHandler : clientHandlers) {
             try {
-                if (!clientHandler.clientUserName.equals(clientUserName)) {
+                if (clientHandler != this) { // only send message to other participants
                     clientHandler.bufferedWriter.write(messageToSend);
                     clientHandler.bufferedWriter.newLine();
                     clientHandler.bufferedWriter.flush();
@@ -52,10 +57,12 @@ public class ClientHandler implements Runnable{
             }
         }
     }
+
     // when client disconnects
     public void removeClientHandler() {
         clientHandlers.remove(this);
-        broadcastMessage("SERVER: " + clientUserName + " has left the chat. ");
+        broadcastMessage(clientUserName + " har lämnat chatten. ");
+        System.out.println(clientUserName + " har kopplat från. ");
     }
     public void closeEverything(Socket socket, BufferedReader bufferedReader,
                                 BufferedWriter bufferedWriter) {
