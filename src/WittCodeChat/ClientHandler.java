@@ -10,6 +10,7 @@ public class ClientHandler implements Runnable{
     private Socket socket;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter; // send msg C to C
+
     private String clientUserName;
 
     public String getClientUserName() {
@@ -37,7 +38,13 @@ public class ClientHandler implements Runnable{
         while (socket.isConnected()) {
             try {
                 messageFromClient = bufferedReader.readLine();
-                broadcastMessage(messageFromClient);
+                System.out.println(messageFromClient);
+                if (messageFromClient.contains("/quit") || messageFromClient.contains("/exit")) {
+                    closeEverything(socket, bufferedReader, bufferedWriter);
+                    break;
+                } else {
+                    broadcastMessage(messageFromClient);
+                }
             } catch (IOException e) {
                 closeEverything(socket, bufferedReader, bufferedWriter);
                 break;
@@ -47,7 +54,7 @@ public class ClientHandler implements Runnable{
     public void broadcastMessage(String messageToSend) {
         for (ClientHandler clientHandler : clientHandlers) {
             try {
-                if (clientHandler != this) { // only send message to other participants
+                if (clientHandler != this) { // only send message to other users
                     clientHandler.bufferedWriter.write(messageToSend);
                     clientHandler.bufferedWriter.newLine();
                     clientHandler.bufferedWriter.flush();
@@ -61,7 +68,7 @@ public class ClientHandler implements Runnable{
     // when client disconnects
     public void removeClientHandler() {
         clientHandlers.remove(this);
-        broadcastMessage(clientUserName + " har lämnat chatten. ");
+        broadcastMessage("<" + clientUserName + ">" + " har lämnat chatten. ");
         System.out.println(clientUserName + " har kopplat från. ");
     }
     public void closeEverything(Socket socket, BufferedReader bufferedReader,
@@ -80,5 +87,6 @@ public class ClientHandler implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.exit(1);
     }
 }

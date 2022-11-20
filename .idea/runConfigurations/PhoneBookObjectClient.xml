@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="PhoneBookObjectClient" type="Application" factoryName="Application" singleton="false">
-    <option name="MAIN_CLASS_NAME" value="PhoneBook.Objects.Client.PhoneBookObjectClient" />
-    <module name="Sprint 4" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>

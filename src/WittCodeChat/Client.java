@@ -11,7 +11,6 @@ public class Client {
     private BufferedWriter bufferedWriter;
     private String userName;
 
-
     public Client(Socket socket, String userName) {
         try {
             this.socket = socket;
@@ -23,7 +22,8 @@ public class Client {
         }
     }
 
-    public void sendMessage() {
+    // for each user
+    public void inputHandler() {
         try {
             bufferedWriter.write(userName);
             bufferedWriter.newLine();
@@ -32,54 +32,46 @@ public class Client {
             Scanner scanner = new Scanner(System.in);
             String messageToSend;
             // original
-//            while (socket.isConnected()) {
-//                messageToSend = scanner.nextLine();
-//                bufferedWriter.write(userName + ": " + messageToSend);
-//                bufferedWriter.newLine();
-//                bufferedWriter.flush();
-//            }
-
-            // TODO quit-funktionen funkar ej
-            // test med ändring av username och quit
             while (socket.isConnected()) {
                 try {
-                    while (true) {
-                        messageToSend = scanner.nextLine();
-                        if (messageToSend.startsWith("/quit") ||
-                                messageToSend.startsWith("/exit")) {
-                            closeEverything(socket, bufferedReader, bufferedWriter);
-                            break;
-                        } else if (messageToSend.startsWith("/rename")) {
-                            changeClientUserName(messageToSend);
-                        } else {
-                            bufferedWriter.write(userName + ": " + messageToSend);
-                            bufferedWriter.newLine();
-                            bufferedWriter.flush();
-                        }
-                    }
+                    messageToSend = scanner.nextLine();
+                    bufferedWriter.write("<"+ userName + "> " + messageToSend);
+                    bufferedWriter.newLine();
+                    bufferedWriter.flush();
                 } catch (IOException e) {
                     closeEverything(socket, bufferedReader, bufferedWriter);
-                    break;
+                    e.printStackTrace();
                 }
             }
-
         } catch (IOException e) {
             closeEverything(socket, bufferedReader, bufferedWriter);
         }
     }
 
-    public void changeClientUserName(String messageFromClient) throws IOException {
-        String[] messageSplit = messageFromClient.split(" ", 2);
-        if (messageSplit.length == 2) {
-            bufferedWriter.write(userName + " har bytt användarnamn till: " + messageSplit[1]); // to server console
-            userName = messageSplit[1];
-            System.out.println("Namnbytet lyckades. Nytt användarnamn: " + userName);
-        } else {
-            System.out.println("Inget användarnamn angavs. ");
-        }
-        bufferedWriter.newLine();
-        bufferedWriter.flush();
-    }
+//    public void sendMessage(String message) {
+//        try {
+//            bufferedWriter.write(userName + ": " + message);
+//            bufferedWriter.newLine();
+//            bufferedWriter.flush();
+//        } catch (IOException e) {
+//            closeEverything(socket, bufferedReader, bufferedWriter);
+//            e.printStackTrace();
+//        }
+//    }
+
+//    public void changeClientUserName(String messageFromClient) throws IOException {
+//        String[] messageSplit = messageFromClient.split(" ", 2);
+//        if (messageSplit.length == 2) {
+//            bufferedWriter.write(userName + " har bytt användarnamn till: " + messageSplit[1]); // to server console
+//            userName = messageSplit[1];
+//            ClientHandler.setClientUserName(userName);
+//            System.out.println("Namnbytet lyckades. Nytt användarnamn: " + userName);
+//        } else {
+//            System.out.println("Inget användarnamn angavs. ");
+//        }
+//        bufferedWriter.newLine();
+//        bufferedWriter.flush();
+//    }
     public void listenForMessage() {
         new Thread(() -> {
             String messageFromGroupChat;
@@ -119,6 +111,6 @@ public class Client {
         Socket socket = new Socket("localhost", 12345);
         Client client = new Client(socket, userName);
         client.listenForMessage();
-        client.sendMessage();
+        client.inputHandler();
     }
 }
