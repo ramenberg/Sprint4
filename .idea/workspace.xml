@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17b1be5d-ae68-41f8-9f0e-2db9d3ddae6d" name="Changes" comment="TCP Chat room">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/ChatMottagare.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Client.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/MottagareMultiThreaded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/PhoneBookObjectClient.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/PhoneBookObjectServer.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WittCodeChat/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WittCodeChat/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WittCodeChat/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WittCodeChat/ClientHandler.java" afterDir="false" />
@@ -142,7 +137,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1668857105326</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="TCP Chat room">
+      <created>1668971303664</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1668971303664</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -35,7 +35,7 @@ public class Client {
             while (socket.isConnected()) {
                 try {
                     messageToSend = scanner.nextLine();
-                    bufferedWriter.write("<"+ userName + "> " + messageToSend);
+                    bufferedWriter.write(messageToSend); // to CH
                     bufferedWriter.newLine();
                     bufferedWriter.flush();
                 } catch (IOException e) {
@@ -82,6 +82,7 @@ public class Client {
                     System.out.println(messageFromGroupChat);
                 } catch (IOException e) {
                     closeEverything(socket, bufferedReader, bufferedWriter);
+                    break;
                 }
             }
         }).start();
